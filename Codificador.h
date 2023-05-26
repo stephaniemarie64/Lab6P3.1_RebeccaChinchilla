@@ -1,18 +1,16 @@
-#pragma once
-#include "iostream"
+#include <iostream>
+#include <algorithm>
 using namespace std;
 
-
-class codificador {
+class Codificador {
 public:
-	string nombre;
-	string apellido;
-	string telefono;
-	string clave;
+    void SEEdata();
+    void In_datos(const string& a, const string& b, const string& c, const string& d);
+    string generarContrasenaEncriptada();
 
-public:
-	void SEEdata();
-	void In_datos(string a, string b, string c, string d);
-	void password();
-
+private:
+    string nombre;
+    string apellido;
+    string telefono;
+    string clave;
 };

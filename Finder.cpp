@@ -1,4 +1,8 @@
 #include "Finder.h"
+#include <iostream>
+#include <string>
+#include <cstdlib>
+#include <ctime>
 
 Finder::Finder(int numFilas, int numColumnas) {
     this->numFilas = numFilas;

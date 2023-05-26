@@ -45,16 +45,15 @@ void opcion2() {
 
     cout << endl << "Matriz: " << endl << endl;
     finder.printMatrix();
-
     string word;
-    cout << "Palabra por buscar en la matriz: ";
+    cout << endl <<"Palabra por buscar en la matriz: ";
     cin >> word;
 
     if (finder.searchHorizontal(word) || finder.searchVertical(word)) {
-        cout << "La palabra '" << word << "' SI se encuentra en la matriz." << endl;
+        cout << endl << "La palabra '" << word << "' SI se encuentra en la matriz." << endl;
     }
     else {
-        cout << "La palabra '" << word << "' NO se encuentra en la matriz." << endl;
+        cout << endl << "La palabra '" << word << "' NO se encuentra en la matriz." << endl;
     }
 }
 
@@ -69,7 +68,6 @@ void mostrarMenu() {
             << "2. Word search" << endl
             << "3. Salir" << endl
             << "Ingrese una opcion : ";
-        cout << "Selecciona una opcion: ";
         cin >> opcion;
         cout << endl;
 

@@ -1,2 +1,3 @@
-﻿  Source.cpp
+﻿  Codificador.cpp
+C:\Users\Rebecca Chinchilla\source\repos\Lab6P3.1_RebeccaChinchilla\Codificador.cpp(33,106): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
   Lab6P3.1_RebeccaChinchilla.vcxproj -> C:\Users\Rebecca Chinchilla\source\repos\Lab6P3.1_RebeccaChinchilla\x64\Debug\Lab6P3.1_RebeccaChinchilla.exe

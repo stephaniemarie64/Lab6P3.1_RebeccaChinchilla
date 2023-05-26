@@ -1,29 +1,44 @@
 #include <iostream>
+#include "Codificador.h"
+#include "Finder.h"
 
 using namespace std;
 
+Codificador codificador;
 void opcion1() {
-    cout << "-------Crear cazador -------" << endl;
+
+     cout << "Ingrese los datos" <<  endl;
+     codificador.ingresarDatos();
+     codificador.validarLongitud();
+     string contrasenaEncriptada = codificador.generarContrasenaEncriptada();
+
+     cout << "Contrasena encriptada: " << contrasenaEncriptada <<  endl;
+
 }
 
 void opcion2() {
-    cout << "-------Crear Pilar-------" << endl;
-}
+    cout << " Word search" << endl << endl;
+    int numFilas, numColumnas;
+    cout << "Ingrese numero de Filas: ";
+    cin >> numFilas;
+    cout << "Ingrese numero de Columnas: ";
+    cin >> numColumnas;
 
-void opcion3() {
-    cout << "------- Crear Luna superior -------" << endl;
-}
+    Finder finder(numFilas, numColumnas);
 
-void opcion4() {
-    cout << "------- Imprimir Cazadores y Pilares -------" << endl;
-}
+    cout << "Matriz: " << endl;
+    finder.printMatrix();
 
-void opcion5() {
-    cout << "------- Imprimir Lunas superiores -------" << endl;
-}
+    string word;
+    cout << "Palabra por buscar en la matriz: ";
+    cin >> word;
 
-void opcion6() {
-    cout << "------- Simulacion -------" << endl;
+    if (finder.searchHorizontal(word) || finder.searchVertical(word)) {
+        cout << "La palabra '" << word << "' SI se encuentra en la matriz." << endl;
+    }
+    else {
+        cout << "La palabra '" << word << "' NO se encuentra en la matriz." << endl;
+    }
 }
 
 
@@ -32,14 +47,11 @@ void mostrarMenu() {
 
     do {
         // Mostrar el menú
-        cout << "Bienvenido!" << endl;
-        cout << "1. Crear cazador" << endl;
-        cout << "2. Crear Pilar" << endl;
-        cout << "3. Crear Luna superior" << endl;
-        cout << "4. Imprimir Cazadores y Pilares" << endl;
-        cout << "5. Imprimir Lunas superiores" << endl;
-        cout << "6. Simulacion" << endl;
-        cout << "7. Salir" << endl;
+        cout << "MENU" << endl
+            << "1. Generar contrasenia encriptada" << endl
+            << "2. Word search" << endl
+            << "3. Salir" << endl
+            << "Ingrese una opcion : ";
         cout << "Selecciona una opcion: ";
         cin >> opcion;
         cout << endl;
@@ -53,18 +65,6 @@ void mostrarMenu() {
             opcion2();
             break;
         case 3:
-            opcion3();
-            break;
-        case 4:
-            opcion4();
-            break;
-        case 5:
-            opcion5();
-            break;
-        case 6:
-            opcion6();
-            break;
-        case 7:
             cout << "Saliendo del programa..." << endl;
             break;
         default:
@@ -73,7 +73,7 @@ void mostrarMenu() {
 
         cout << endl;
 
-    } while (opcion != 4);
+    } while (opcion != 3);
 }
 
 int main() {

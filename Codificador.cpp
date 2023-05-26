@@ -1,94 +1,47 @@
-#include "Codificador.h"
-#include <iostream>
-#include <cmath>
+#include "Codificador.h"   
 
-using namespace std;
-
-void Codificador::ingresarDatos() {
-     cout << "Ingrese el nombre: ";
-     cin >> nombre;
-
-     cout << "Ingrese el apellido: ";
-     cin >> apellido;
-
-     cout << "Ingrese el telefono: ";
-     cin >> telefono;
-
-     cout << "Ingrese la clave: ";
-     cin >> clave;
+void codificador::SEEdata() {
+	cout << "Nombre : " << nombre << endl;
+	cout << "Appelido : " << apellido << endl;
+	cout << "Telefono : " << telefono << endl;
+	cout << "Clave : " << clave << endl;
 }
 
-void Codificador::validarLongitud() {
-    while (nombre.length() < 4 || nombre.length() > 10 || nombre.length() % 2 != 0 ||
-        apellido.length() < 4 || apellido.length() > 10 || apellido.length() % 2 != 0 ||
-        telefono.length() < 4 || telefono.length() > 10 || telefono.length() % 2 != 0 ||
-        clave.length() < 4 || clave.length() > 10 || clave.length() % 2 != 0) {
-         cout << "Los atributos deben tener una longitud entre 4 y 10 y ser pares. Vuelva a ingresar los datos." <<  endl;
-        ingresarDatos();
-    }
+void codificador::In_datos(string a, string b, string c, string d) {
+	nombre = a;
+	apellido = b;
+	telefono = c;
+	clave = d;
 }
-std::string Codificador::generarContrasenaEncriptada() {
-    std::string contrasena;
 
-    int max_length = max(max(max(nombre.length(), apellido.length()), telefono.length()), clave.length());
+void codificador::password() {
 
-    for (int i = 0; i < max_length; i++) {
-        if (i < nombre.length()) {
-            contrasena += nombre[i];
-            if ((i + 1) < nombre.length() && nombre[i] == nombre[i + 1]) {
-                contrasena += '(';
-                int j = i + 2;
-                while (j < nombre.length() && nombre[j] == nombre[i]) {
-                    j++;
-                }
-                contrasena += nombre.substr(i + 1, j - i - 1);
-                contrasena += ')';
-                i = j - 1;
-            }
-        }
+	cout << nombre.substr(0, 2);
+	cout << "(" << clave.substr(0, 1) << ")";//
+	cout << apellido.substr(0, 2);
+	cout << "(" << clave.substr(1, 1) << ")";//
+	cout << telefono.substr(0, 2);
+	cout << "(" << clave.substr(2, 1) << ")";/////
+	cout << nombre.substr(2, 2);
+	cout << "(" << clave.substr(3, 1) << ")";////
+	cout << apellido.substr(2, 2);
+	cout << "(" << clave.substr(4, 1) << ")";
+	cout << telefono.substr(2, 2);
+	cout << "(" << clave.substr(5, 1) << ")";
+	cout << nombre.substr(4, 4);
+	cout << "(" << clave.substr(6, 1) << ")";
+	cout << apellido.substr(4, 2);
 
-        if (i < apellido.length()) {
-            contrasena += apellido[i];
-            if ((i + 1) < apellido.length() && apellido[i] == apellido[i + 1]) {
-                contrasena += '(';
-                int j = i + 2;
-                while (j < apellido.length() && apellido[j] == apellido[i]) {
-                    j++;
-                }
-                contrasena += apellido.substr(i + 1, j - i - 1);
-                contrasena += ')';
-                i = j - 1;
-            }
-        }
 
-        if (i < telefono.length()) {
-            contrasena += telefono[i];
-            if ((i + 1) < telefono.length() && telefono[i] == telefono[i + 1]) {
-                contrasena += '(';
-                int j = i + 2;
-                while (j < telefono.length() && telefono[j] == telefono[i]) {
-                    j++;
-                }
-                contrasena += telefono.substr(i + 1, j - i - 1);
-                contrasena += ')';
-                i = j - 1;
-            }
-        }
 
-        if (i < clave.length()) {
-            contrasena += clave[i];
-            if ((i + 1) < clave.length() && clave[i] == clave[i + 1]) {
-                contrasena += '(';
-                int j = i + 2;
-                while (j < clave.length() && clave[j] == clave[i]) {
-                    j++;
-                }
-                contrasena += clave.substr(i + 1, j - i - 1);
-                contrasena += ')';
-                i = j - 1;
-            }
-        }
-    }
+	if (clave.length() < 8) {
+		cout << telefono.substr(4, 4);
+	}
+	else {
+		cout << "(" << clave.substr(7, 1) << ")";
+		cout << telefono.substr(4, 2);
+		cout << apellido.substr(6, 2);
+		cout << telefono.substr(6, 2);
+	}
 
-    return contrasena;
 }

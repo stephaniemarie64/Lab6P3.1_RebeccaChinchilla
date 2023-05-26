@@ -1,3 +1,4 @@
-﻿  Codificador.cpp
-C:\Users\Rebecca Chinchilla\source\repos\Lab6P3.1_RebeccaChinchilla\Codificador.cpp(33,106): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+﻿  Source.cpp
+C:\Users\Rebecca Chinchilla\source\repos\Lab6P3.1_RebeccaChinchilla\Source.cpp(24,8): warning C4554: "&": compruebe la prioridad de operador para posibles errores; utilice paréntesis para indicar la prioridad
+C:\Users\Rebecca Chinchilla\source\repos\Lab6P3.1_RebeccaChinchilla\Source.cpp(24,154): warning C4554: "&": compruebe la prioridad de operador para posibles errores; utilice paréntesis para indicar la prioridad
   Lab6P3.1_RebeccaChinchilla.vcxproj -> C:\Users\Rebecca Chinchilla\source\repos\Lab6P3.1_RebeccaChinchilla\x64\Debug\Lab6P3.1_RebeccaChinchilla.exe

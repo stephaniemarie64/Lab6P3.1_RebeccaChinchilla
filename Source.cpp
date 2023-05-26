@@ -4,15 +4,41 @@
 
 using namespace std;
 
-Codificador codificador;
 void opcion1() {
+    codificador x;
+    string a = "", b = "", c = "", d = "";
+    string palabra = "";
 
-     cout << "Ingrese los datos" <<  endl;
-     codificador.ingresarDatos();
-     codificador.validarLongitud();
-     string contrasenaEncriptada = codificador.generarContrasenaEncriptada();
+    cout << "Ingresar Datos" << endl << endl;
+    cout << "Nombre : ";
+    cin >> a;
+    cout << endl << "Apellido : ";
+    cin >> b;
+    cout << endl << "Telefono : ";
+    cin >> c;
+    cout << endl << "Clave : ";
+    cin >> d;
 
-     cout << "Contrasena encriptada: " << contrasenaEncriptada <<  endl;
+    x.In_datos(a, b, c, d);
+
+    if (a.length() >= 4 & a.length() <= 10 & b.length() >= 4 & b.length() <= 10 & c.length() >= 4 & c.length() <= 10 & d.length() >= 4 & d.length() <= 10) {
+        cout << endl;
+
+        cout << "VER DATOS" << endl;
+        cout << "------------------" << endl;
+
+        x.SEEdata();
+
+        cout << "CONTRASENA GENERADA : ";
+        x.password();
+        cout << endl;
+
+    }
+    else {
+        cout  << endl;
+        cout << "La longitud del nombre debe ser entre 4 y 10 caracteres y debe ser estrictamente par. " << endl;
+    }
+
 
 }
 
@@ -26,7 +52,7 @@ void opcion2() {
 
     Finder finder(numFilas, numColumnas);
 
-    cout << "Matriz: " << endl;
+    cout << endl << "Matriz: " << endl << endl;
     finder.printMatrix();
 
     string word;

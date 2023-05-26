@@ -3,27 +3,43 @@
 using namespace std;
 
 void opcion1() {
-    cout << "Seleccionaste la opcion 1" << endl;
+    cout << "-------Crear cazador -------" << endl;
 }
 
 void opcion2() {
-    cout << "Seleccionaste la opcion 2" << endl;
+    cout << "-------Crear Pilar-------" << endl;
 }
 
 void opcion3() {
-    cout << "Seleccionaste la opcion 3" << endl;
+    cout << "------- Crear Luna superior -------" << endl;
 }
+
+void opcion4() {
+    cout << "------- Imprimir Cazadores y Pilares -------" << endl;
+}
+
+void opcion5() {
+    cout << "------- Imprimir Lunas superiores -------" << endl;
+}
+
+void opcion6() {
+    cout << "------- Simulacion -------" << endl;
+}
+
 
 void mostrarMenu() {
     int opcion;
 
     do {
         // Mostrar el menú
-        cout << "MENU" << endl;
-        cout << "1. Opción 1" << endl;
-        cout << "2. Opción 2" << endl;
-        cout << "3. Opción 3" << endl;
-        cout << "4. Salir" << endl;
+        cout << "Bienvenido!" << endl;
+        cout << "1. Crear cazador" << endl;
+        cout << "2. Crear Pilar" << endl;
+        cout << "3. Crear Luna superior" << endl;
+        cout << "4. Imprimir Cazadores y Pilares" << endl;
+        cout << "5. Imprimir Lunas superiores" << endl;
+        cout << "6. Simulacion" << endl;
+        cout << "7. Salir" << endl;
         cout << "Selecciona una opcion: ";
         cin >> opcion;
         cout << endl;
@@ -40,6 +56,15 @@ void mostrarMenu() {
             opcion3();
             break;
         case 4:
+            opcion4();
+            break;
+        case 5:
+            opcion5();
+            break;
+        case 6:
+            opcion6();
+            break;
+        case 7:
             cout << "Saliendo del programa..." << endl;
             break;
         default:
